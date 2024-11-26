@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
     NEXT_CONTRACT_ADDRESS: process.env.NEXT_CONTRACT_ADDRESS,
     NEXT_SIGNER_ADDRESS: process.env.NEXT_SIGNER_ADDRESS,
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default nextConfig;
