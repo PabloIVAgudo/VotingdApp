@@ -28,7 +28,8 @@ const ResultBoard: React.FC<ResultsProps> = ({ readContract }) => {
       if (!readContract) return;
 
       const candidatesData = await readContract.retrieveVotes();
-      const parsedResults = candidatesData.map((candidate: any) => ({
+      // @ts-ignore next-line
+      const parsedResults = candidatesData.map((candidate) => ({
         id: parseInt(candidate[0]),
         name: candidate[1],
         votes: parseInt(candidate[2]),

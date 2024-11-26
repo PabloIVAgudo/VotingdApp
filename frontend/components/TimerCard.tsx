@@ -7,7 +7,7 @@ interface TimerCardProps {
 }
 
 const TimerCard: React.FC<TimerCardProps> = ({ readContract }) => {
-  const [electionTimeLeft, setElectionTimeLeft] = useState<any>(null);
+  const [electionTimeLeft, setElectionTimeLeft] = useState(null);
 
   useEffect(() => {
     const getTimeLeft = async () => {

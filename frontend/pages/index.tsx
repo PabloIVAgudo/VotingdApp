@@ -16,12 +16,6 @@ type Candidate = {
   name: string;
 };
 
-type Result = {
-  id: number;
-  name: string;
-  votes: number;
-};
-
 const Home = () => {
   const [candidates, setCandidates] = useState<Candidate[]>([]);
   const [readContract, setReadContract] = useState<ethers.Contract | null>(

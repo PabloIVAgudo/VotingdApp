@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ethers } from "ethers";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
