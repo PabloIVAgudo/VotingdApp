@@ -28,7 +28,7 @@ const ResultBoard: React.FC<ResultsProps> = ({ readContract }) => {
       if (!readContract) return;
 
       const candidatesData = await readContract.retrieveVotes();
-      // @ts-ignore next-line
+      // @ts-expect-error
       const parsedResults = candidatesData.map((candidate) => ({
         id: parseInt(candidate[0]),
         name: candidate[1],

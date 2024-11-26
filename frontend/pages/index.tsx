@@ -33,19 +33,19 @@ const Home = () => {
   useEffect(() => {
     document.documentElement.classList.add("dark");
     const initializeProvider = async () => {
-      // @ts-ignore next-line
+      // @ts-expect-error
       if (typeof window.ethereum === "undefined") {
         alert("Please install MetaMask to use this dApp");
         return;
       }
 
-      // @ts-ignore next-line
+      // @ts-expect-error
       const provider = new ethers.BrowserProvider(window.ethereum);
       const accounts = await provider.send("eth_requestAccounts", []);
       setConnectedAccount(accounts[0]);
 
       const network = await provider.getNetwork();
-      // @ts-ignore next-line
+      // @ts-expect-error
       if (network.chainId !== BigInt(11155111n)) {
         alert("Please connect to the correct network.");
         return;
@@ -76,7 +76,8 @@ const Home = () => {
 
   const fetchCandidates = async (contract: ethers.Contract) => {
     const candidatesData = await contract.retrieveVotes();
-    const parsedCandidates = candidatesData.map((candidate: any) => ({
+    // @ts-expect-error
+    const parsedCandidates = candidatesData.map((candidate) => ({
       id: parseInt(candidate[0]),
       name: candidate[1],
     }));
